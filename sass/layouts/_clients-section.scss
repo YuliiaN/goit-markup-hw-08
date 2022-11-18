@@ -1,21 +1,35 @@
 .clients__title {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 
   font-weight: 700;
-  font-size: 36px;
+  font-size: 28px;
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-align: center;
+
+  @include mq(desk) {
+    margin-bottom: 50px;
+    font-size: 36px;
+  }
 }
 
 .clients__list {
   display: flex;
+  flex-wrap: wrap;
   gap: 30px;
 
   .clients__item {
-    width: 170px;
+    width: calc((100% - 30px) / 2);
     height: 92px;
     color: $icon-color;
+
+    @include mq(tab-only) {
+      width: calc((100% - 30px * 2) / 3);
+    }
+  }
+  
+  @include mq(desk) {
+    flex-wrap: nowrap;
   }
 }
 

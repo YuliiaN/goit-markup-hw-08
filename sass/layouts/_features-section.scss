@@ -1,16 +1,32 @@
 .features__list {
   display: flex;
+  flex-direction: column;
   gap: 30px;
+
+  @include mq(tab) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.features__item {
+  @include mq(tab-only) {
+    width: calc((100% - 30px) / 2);
+  }
+
+  @include mq(desk) {
+    width: calc((100% - 30px * 3) / 4);
+  }
 }
 
 .features__pic {
-  width: 270px;
-  height: 120px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 30px;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 30px;
   background-color: $powder-bcg-color;
 }
 
@@ -24,11 +40,16 @@
 
   font-weight: 700;
   font-size: 14px;
-  line-height: 1.14;
+  line-height: 1.17;
   letter-spacing: 0.03em;
-}
+  text-align: center;
 
-.features__text {
-  line-height: 1.71;
-  letter-spacing: 0.03em;
+  @include mq(desk) {
+    text-align: start;
+  }
+
+  .features__text {
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+  }
 }

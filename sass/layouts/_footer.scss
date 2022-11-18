@@ -3,30 +3,64 @@ footer {
   padding-top: 60px;
   padding-bottom: 60px;
 
-  .footer__container {
-    display: flex;
+  text-align: center;
+
+  @include mq(desk) {
+    text-align: start;
+  }
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+
+  @include mq(tab-only) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  @include mq(desk) {
+    flex-direction: row;
+    // flex-wrap: nowrap;
+    // justify-content: start;
     align-items: baseline;
+    gap: 0;
   }
 }
 
 // address
 
 .footer__address {
-  margin-right: 70px;
+  @include mq(desk) {
+    margin-right: 70px;
+  }
 }
 
 .footer__address-list {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  justify-content: center;
+  gap: 8px;
   margin-top: 20px;
+
+  @include mq(desk) {
+    gap: 9px;
+  }
+}
+
+.footer__logo {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .footer__address-link {
-  color: rgba(255, 255, 255, 0.6);
   font-style: normal;
   line-height: 1.71;
   letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.6);
 
   text-decoration: none;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -43,7 +77,9 @@ footer {
 // social media block
 
 .footer__sm {
-  margin-right: 93px;
+  @include mq(desk) {
+    margin-right: 93px;
+  }
 }
 
 .footer__sm-text,
@@ -52,7 +88,7 @@ footer {
 
   font-weight: 700;
   font-size: 14px;
-  line-height: calc(16 / 14);
+  line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: $white-color;
@@ -61,14 +97,30 @@ footer {
 // input block
 
 .footer__subscription {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  width: 100%;
+
+  @include mq(tab-only) {
+    max-width: 450px;
+  }
+
+  @include mq(desk) {
+    width: fit-content;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+  }
 }
 
 .footer__form {
   display: flex;
-  gap: 12px;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  @include mq(desk) {
+    flex-direction: row;
+    gap: 12px;
+  }
 
   .footer__form-input {
     width: 100%;
@@ -86,6 +138,7 @@ footer {
 }
 
 .footer__btn {
+  width: fit-content;
   padding: 10px 28px;
   display: flex;
   gap: 10px;

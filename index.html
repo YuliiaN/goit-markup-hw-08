@@ -25,47 +25,112 @@
             >Web<span class="logo__logo--black">Studio</span>
           </a>
 
-          <ul class="list nav__list">
-            <li class="nav__item">
-              <a href="./index.html" class="link nav__link nav__link--current"
-                >Студія</a
-              >
-            </li>
-            <li class="nav__item">
-              <a href="./portfolio.html" class="link nav__link">Портфоліо</a>
-            </li>
-            <li class="nav__item">
-              <a href="/" class="link nav__link">Контакти</a>
-            </li>
-          </ul>
-        </nav>
+          <button
+            type="button"
+            class="menu-button is-open"
+            aria-expanded="false"
+            aria-controls="menu-container"
+            data-menu-button
+          >
+            <svg width="40" height="40" aria-label="Перемикач мобільного меню">
+              <use
+                href="./images/icons.svg#burger-menu"
+                class="burger-menu"
+              ></use>
+              <use
+                href="./images/icons.svg#burger-menu-closed"
+                class="burger-menu-closed"
+              ></use>
+            </svg>
+          </button>
 
-        <ul class="list contacts__list">
-          <li class="contacts__item contacts__item--mail">
-            <a href="mailto:info@devstudio.com" class="link contacts__link">
-              <svg width="16" height="12" class="contacts__icon">
-                <use href="./images/icons.svg#icon-mail"></use>
-              </svg>
-              info@devstudio.com</a
-            >
-          </li>
-          <li class="contacts__item">
-            <a href="tel:+380961111111" class="link contacts__link">
-              <svg width="10" height="16" class="contacts__icon">
-                <use href="./images/icons.svg#icon-phone"></use>
-              </svg>
-              +38 096 111 11 11</a
-            >
-          </li>
-        </ul>
+          <div class="menu-container is-open" id="menu-container" data-menu>
+            <ul class="list nav__list">
+              <li class="nav__item">
+                <a href="./index.html" class="link nav__link nav__link--current"
+                  >Студія</a
+                >
+              </li>
+              <li class="nav__item">
+                <a href="./portfolio.html" class="link nav__link">Портфоліо</a>
+              </li>
+              <li class="nav__item">
+                <a href="/" class="link nav__link">Контакти</a>
+              </li>
+            </ul>
+
+            <ul class="list contacts__list">
+              <li class="contacts__item">
+                <a
+                  href="mailto:info@devstudio.com"
+                  class="link contacts__link contacts__link--mail"
+                >
+                  <svg width="16" height="12" class="contacts__icon">
+                    <use href="./images/icons.svg#icon-mail"></use>
+                  </svg>
+                  info@devstudio.com</a
+                >
+              </li>
+              <li class="contacts__item">
+                <a
+                  href="tel:+380961111111"
+                  class="link contacts__link contacts__link--tel"
+                >
+                  <svg width="10" height="16" class="contacts__icon">
+                    <use href="./images/icons.svg#icon-phone"></use>
+                  </svg>
+                  +38 096 111 11 11</a
+                >
+              </li>
+            </ul>
+
+            <ul class="list nav__sm-list">
+              <li class="nav__sm-item">
+                <a
+                  href="https://www.instagram.com/"
+                  class="link nav__sm-link"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  >Instagram
+                </a>
+              </li>
+              <li class="nav__sm-item">
+                <a
+                  href="https://twitter.com/?lang=uk"
+                  class="link nav__sm-link"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  >Twitter
+                </a>
+              </li>
+              <li class="nav__sm-item">
+                <a
+                  href="https://www.facebook.com/"
+                  class="link nav__sm-link"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  >Facebook
+                </a>
+              </li>
+              <li class="nav__sm-item">
+                <a
+                  href="https://ua.linkedin.com/"
+                  class="link nav__sm-link"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  >Linkedin
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
       </div>
     </header>
     <main>
       <!-- Секція Герой -->
 
       <section class="hero overlay">
-        <div class="container">
-          <!-- Заголовок схован у СSS за допомогою position absolute -100% -->
+        <div class="container hero__container">
           <h1 class="title hero__title">
             Ефективні рішення для вашого бізнесу
           </h1>
@@ -489,7 +554,7 @@
     <footer class="footer">
       <div class="container footer__container">
         <div class="footer__address">
-          <a href="/" class="logo"
+          <a href="/" class="logo footer__logo"
             >Web<span class="logo__logo--white">Studio</span></a
           >
           <address>
@@ -577,6 +642,7 @@
               name="email"
               placeholder="E-mail"
               class="footer__form-input"
+              required
             />
             <button type="submit" class="footer__btn btn">
               Підписатися
@@ -591,7 +657,7 @@
 
     <!-- Модальне вікно -->
 
-    <div class="backdrop is-hidden" data-modal>
+    <!-- <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button type="button" class="modal__btn" data-modal-close>
           <svg class="modal__icon">
@@ -678,8 +744,9 @@
           <button type="submit" class="form__btn btn">Відправити</button>
         </form>
       </div>
-    </div>
+    </div> -->
 
+    <script src="./js/menu.js"></script>
     <script src="./js/modal.js"></script>
   </body>
 </html>
