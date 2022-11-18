@@ -279,6 +279,8 @@
     background-color: $white-color;
     outline: 3px solid green;
 
+    z-index: 998;
+
     &.is-open {
       display: flex;
     }
