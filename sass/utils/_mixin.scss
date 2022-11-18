@@ -1,7 +1,4 @@
-@mixin btn($mr: 20px, $pd: 30px) {
-  margin: $mr;
-  padding: $pd;
-}
+// @media queries
 
 @mixin mq($type) {
   $mobile: 480px;
@@ -42,5 +39,15 @@
     @media screen and (max-width: ($desktop - 0.02)) {
       @content;
     }
+  }
+}
+
+// retina
+
+@mixin retina {
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    @content;
   }
 }
