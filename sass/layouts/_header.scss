@@ -1,8 +1,11 @@
 .header {
   position: relative;
-  padding-top: 10px;
-  padding-bottom: 10px;
   border-bottom: 1px solid #ececec;
+
+  @include mq(mob-only) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
 }
 
 .no-scroll {
@@ -275,7 +278,6 @@
     padding-bottom: 32px;
     padding-left: 40px;
 
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
 
@@ -283,7 +285,7 @@
     outline: 3px solid green;
 
     &.is-open {
-      display: block;
+      display: flex;
     }
   }
 
