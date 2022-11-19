@@ -16,17 +16,14 @@ footer {
   align-items: center;
   gap: 60px;
 
-  @include mq(tab-only) {
+  @include mq(tab) {
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: baseline;
     justify-content: space-around;
   }
 
   @include mq(desk) {
-    flex-direction: row;
-    // flex-wrap: nowrap;
-    // justify-content: start;
-    align-items: baseline;
     gap: 0;
   }
 }
